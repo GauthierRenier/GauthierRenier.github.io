@@ -3,7 +3,7 @@
 (function (angular) {
     angular.module('quickscan').constant('ENV', {
         REST: {
-            APIROOT: '/survey'
+            APIROOT: 'https://acc.saviscio.be/survey'
         }
     });
 })(angular);
