@@ -10,7 +10,7 @@
         function apiRoot() {
             if ($location.host().toLowerCase() === 'localhost') {
                 // We are serving from Gulp! The port for the REST APIROOT must be adapted;
-                return 'http://localhost:8080' + ENV.REST.APIROOT;
+                return 'https://acc.saviscio.be/survey'
             } else {
                 return ENV.REST.APIROOT
             }
