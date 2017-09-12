@@ -1,0 +1,19 @@
+<ng-form name="{{$ctrl.formName}}" novalidate>
+    <div class="form-group" ng-class="{'has-error': isInvalid()}">
+        <label class="control-label">
+            <strong class="text-success" ng-if="isValid()"><span class="glyphicon glyphicon-ok-sign"></span></strong>
+            {{$ctrl.question.text.translations[$ctrl.language]}}
+        </label>
+
+        <div class="degree input-group">
+
+            <div class="checkbox" ng-repeat="answer in $ctrl.question.candidateAnswers track by answer.id">
+                <label>
+                    <input ng-model="vm.answers[answer.id]" type="checkbox">
+                    {{answer.text.translations[$ctrl.language]}}
+                </label>
+            </div>
+
+        </div>
+    </div>
+</ng-form>

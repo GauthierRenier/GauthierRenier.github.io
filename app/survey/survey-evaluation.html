@@ -1,0 +1,74 @@
+<br/>
+
+<div class="container-fluid" >
+    <div class="row">
+        <div class="col-xs-12 col-sm-offset-1 col-sm-10">
+
+            <p class="lead"><strong translate>survey.evaluation.thankYou</strong></p>
+
+            <form name="surveyEvaluationForm" ng-submit="proceed()" novalidate>
+
+                <div class="radio" ng-class="{'has-error': !isEvaluationSelected()}">
+                    <label>
+                        <input type="radio"
+                               name="evaluationOptions"
+                               ng-model="vm.evaluation.problem"
+                               ng-value="false"
+                               required>
+                        <span translate>survey.evaluation.noProblem</span>
+                    </label>
+                </div>
+
+                <div class="radio" ng-class="{'has-error': !isEvaluationSelected()}">
+                    <label style="width: 100%">
+                        <input type="radio"
+                               name="evaluationOptions"
+                               ng-model="vm.evaluation.problem"
+                               ng-value="true"
+                               required>
+
+                        <span translate>survey.evaluation.helpFrom</span>
+                        <div class="form-group" ng-class="{'has-error': isHelperInvalid()}">
+                            <input class="form-control"
+                                   name="helper"
+                                   maxlength="200"
+                                   ng-model="vm.evaluation.helper"
+                                   ng-required="isHelperRequired()"
+                                   type="text">
+                        </div>
+
+                        <span translate>survey.evaluation.helpReason</span>
+                        <div class="form-group" ng-class="{'has-error': isReasonInvalid()}">
+                            <textarea class="form-control"
+                                      maxlength="2000"
+                                      name="reason"
+                                      ng-model="vm.evaluation.reason"
+                                      ng-required="isReasonRequired()"
+                                      type="text"></textarea>
+                        </div>
+                    </label>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-offset-2 col-xs-8 col-sm-offset-3 col-sm-6">
+            <div class="btn-group btn-group-justified pagination">
+                <div class="btn-group">
+                    <button class="btn btn-default" ng-click="back()" type="button" translate>
+                        survey.evaluation.back
+                    </button>
+                </div>
+                <div class="btn-group">
+                    <button class="btn btn-default" ng-click="next()" ng-disabled="!isEvaluationValid()" type="button">
+                        <strong class="text-success">
+                            <span translate>survey.evaluation.next</span>&nbsp;
+                            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                        </strong>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

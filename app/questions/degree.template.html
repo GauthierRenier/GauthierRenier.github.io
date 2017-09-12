@@ -1,0 +1,35 @@
+<ng-form name="{{$ctrl.formName}}" novalidate>
+    <div class="form-group" ng-class="{'has-error': isInvalid()}">
+        <label class="control-label">
+            <strong class="text-success" ng-if="isValid()"><span class="glyphicon glyphicon-ok-sign"></span></strong>
+            {{$ctrl.question.text.translations[$ctrl.language]}}
+        </label>
+
+        <div class="degree input-group">
+
+            <span>({{$ctrl.question.minText.translations[$ctrl.language]}})</span>
+
+            <span uib-rating
+                  max="vm.amountOfDegrees"
+                  name="degreeValue"
+                  ng-model="vm.value"
+                  on-hover="hovering(value)"
+                  on-leave="leaving()"
+                  required
+                  titles="vm.degreeTitles">
+            </span>
+
+            <span>({{$ctrl.question.maxText.translations[$ctrl.language]}})</span>
+
+            <span ng-class="{'text-success': vm.value && !vm.hoveredValue}">
+                <span ng-if="vm.hoveredValue">{{correctedValue(vm.hoveredValue)}}</span>
+                <strong ng-if="vm.value && !vm.hoveredValue">{{correctedValue(vm.value)}}</strong>
+                <button class="btn btn-xs degree-remove text-danger"
+                        ng-click="clearValue()"
+                        ng-if="vm.value">
+                    <span class="glyphicon glyphicon-remove"></span>
+                </button>
+            </span>
+        </div>
+    </div>
+</ng-form>

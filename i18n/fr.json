@@ -1,0 +1,70 @@
+{
+  "error": {
+    "unexpected": "Erreur inattendue"
+  },
+  "manage": {
+    "accessKey": "Clé d'accès",
+    "accessKeyInvalid": "Clé d'accès invalide",
+    "identifiers": {
+      "file": "Fichier d'identifiants",
+      "sendEmailToServiceDesk": "Envoyez un email au Service Desk pour demander la génération des codes d'invitation",
+      "tabName": "Identifiants",
+      "upload": "Envoyer",
+      "uploaded": "Fichier envoyé!"
+    },
+    "invitationCodes": {
+      "download": "Télécharger les fichier de codes d'invitation",
+      "noResults": "Aucun résultat à afficher",
+      "tabName": "Codes d'invitation"
+    },
+    "surveyResults": {
+      "download": "Télécharger les résultats",
+      "noResults": "Aucun résultat à afficher",
+      "tabName": "Résultats des questionnaires"
+    }
+  },
+  "survey": {
+    "initialization": {
+      "enterSurveyKey": "Entrez le code du questionnaire",
+      "error": {
+        "403": "L'accès est refusé. Ce questionnaire a peut-être déjà été rempli?",
+        "500": "Clé inconnue. Veuillez vérifier que la clé affichée ci-dessous est bien correcte.",
+        "questionNotFound": "Pour une raison inconnue, la question à affficher n'est pas disponible. Peut-être y a-t-il un problème de connexion Internet ou un problème avec nos services? Veuillez ré-essayer plus tard..."
+      },
+      "proceed": "Continuez",
+      "start": "Commencez"
+    },
+    "questionnaire": {
+      "error": {
+        "answerNotSaved": "Votre réponse n'a pas pu être sauvée. Peut-être y a-t-il un problème de connexion Internet ou un problème avec nos services? Veuillez ré-essayer plus tard...",
+        "surveyNotFound": "Le questionnaire n'a pas pu être retrouvé. Peut-être y a-t-il un problème de connexion Internet ou un problème avec nos services? Veuillez ré-essayer plus tard..."
+      },
+      "goToFirstUnansweredQuestion": "Aller à la première question incomplète",
+      "finish": "Terminer",
+      "next": "Suivant",
+      "previous": "Précédent",
+      "thankyou": {
+        "content": "Merci d'avoir complété ce questionnaire. Le questionnaire est clôturé!",
+        "title": "Merci!"
+      },
+      "page":"Page "
+    },
+    "evaluation": {
+      "back": "Retour au questionnaire",
+      "error": {
+        "updateEvaluation": "Votre évaluation n'a pas pu être sauvée. Peut-être y a-t-il un problème de connexion Internet ou un problème avec nos services? Veuillez ré-essayer plus tard..."
+      },
+      "helpFrom": "Pour remplir ce questionnaire j'ai eu besoin de l'aide de",
+      "helpReason": "parce que (veuillez préciser de quelle aide vous avez eu besoin et pourquoi)",
+      "next": "Terminer",
+      "noProblem": "Je n'ai rencontré aucun problème pour remplir ce questionnaire",
+      "thankYou": "Merci d'avoir rempli ce questionnaire!"
+    },
+    "confirmation": {
+      "title": "Confirmation",
+      "question": "Vous n'avez pas répondu à toutes les questions. Voulez-vous quand même clotûrer ce questionnaire?",
+      "cancel": "Revenir au questionnaire",
+      "confirm": "Clôturer le questionnaire"
+    }
+  }
+}

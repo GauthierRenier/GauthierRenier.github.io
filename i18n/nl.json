@@ -1,0 +1,70 @@
+{
+  "error": {
+    "unexpected": "Onverwachte fout"
+  },
+  "manage": {
+    "accessKey": "Toegangssleutel",
+    "accessKeyInvalid": "Verkeerde toegangssleutel",
+    "identifiers": {
+      "file": "Identificatie bestand",
+      "sendEmailToServiceDesk": "Stuur een email naar de service desk voor het aanvragen tot generatie van uitnodigingscodes",
+      "tabName": "Identificaties",
+      "upload": "Uploaden",
+      "uploaded": "Bestand geüpload!"
+    },
+    "invitationCodes": {
+      "download": "Uitnodigingscodes downloaden",
+      "noResults": "Geen resultaten om weer te geven!",
+      "tabName": "Uitnodigingscodes"
+    },
+    "surveyResults": {
+      "download": "Resultaten downloaden",
+      "noResults": "Geen resultaten om weer te geven!",
+      "tabName": "Vragenlijst resultaten"
+    }
+  },
+  "survey": {
+    "initialization": {
+      "enterSurveyKey": "Vul de vragenlijst code in",
+      "error": {
+        "403": "De toegang wordt geweigerd. Deze vragenlijst kan al zijn ingevuld?",
+        "500": "Onbekende vragenlijst code. Wilt u verifiëren of de onderstaande sleutel correct weergegeven is.",
+        "questionNotFound": "Om een onbekende reden, is de vraag niet beschikbaar. Misschien is er internetverbinding probleem of een probleem met onze diensten? Probeer het later opnieuw ..."
+      },
+      "proceed": "Ga verder",
+      "start": "Begin"
+    },
+    "questionnaire": {
+      "error": {
+        "answerNotSaved": "Uw antwoord kan niet worden opgeslagen. Misschien is er internetverbinding probleem of een probleem met onze diensten? Probeer het later opnieuw ...",
+        "surveyNotFound": "De vragenlijst kon niet worden gevonden. Misschien is er internetverbinding probleem of een probleem met onze diensten? Probeer het later opnieuw ..."
+      },
+      "goToFirstUnansweredQuestion": "Ga naar de eerste onvolledige vraag",
+      "finish": "Beëindigen",
+      "next": "Volgende",
+      "previous": "Voorgaand",
+      "thankyou": {
+        "content": "Dank u voor het invullen van deze vragenlijst. De vragenlijst is voltooid!",
+        "title": "Bedankt!"
+      },
+      "page":"Pagina "
+    },
+    "evaluation": {
+      "back": "Terug naar de vragenlijst",
+      "error": {
+        "updateEvaluation": "Uw evaluatie is niet opgeslagen. Misschien is er internetverbinding probleem of een probleem met onze diensten? Probeer het later opnieuw ..."
+      },
+      "helpFrom": "Bij het invullen van deze vragenlijst had ik hulp nodig van",
+      "helpReason": "omdat (omschrijf waarom u hulp nodig had en welke hulp er precies gegeven is) ",
+      "next": "Beëindig",
+      "noProblem": "Ik heb geen problemen ondervonden bij het invullen van deze vragenlijst",
+      "thankYou": "Dank u voor het invullen van deze vragenlijst!"
+    },
+    "confirmation": {
+      "title": "Bevestiging",
+      "question": "U heb niet alle vragen antwoord. Zou u nog steeds deze vragenlijst te sluiten?",
+      "cancel": "Terug naar de vragenlijst",
+      "confirm": "Beëindigen de vragenlijst"
+    }
+  }
+}

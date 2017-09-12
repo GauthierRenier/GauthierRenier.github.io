@@ -1,0 +1,84 @@
+<br/>
+
+<div class="container-fluid" >
+    <div class="row">
+        <div class="col-xs-12 col-sm-offset-1 col-sm-10">
+            <span class="pull-right">&nbsp;{{vm.progress.value}} / {{vm.progress.max}}</span>
+            <uib-progressbar class="progress-striped" max="vm.progress.max" title="progressPercentage()"
+                             type="info" value="vm.progress.value">
+                {{progressPercentage()}} %
+            </uib-progressbar>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-offset-1 col-sm-10">
+            <form name="questionnaireForm" novalidate>
+
+                <div ng-repeat="question in vm.pagination.questions track by question.id">
+
+                    <q-degree ng-if="isDegreeQuestion(question)"
+                              language="vm.lang"
+                              form-name="'question' + question.id"
+                              question="question"
+                              answer="question.answer">
+                    </q-degree>
+
+                    <q-single-choice ng-if="isSingleChoiceQuestion(question)"
+                              language="vm.lang"
+                              form-name="'questions' + question.id"
+                              question="question"
+                              answer="question.answer">
+                    </q-single-choice>
+
+                    <q-mutliple-choice ng-if="isMultipleChoiceQuestion(question)"
+                              language="vm.lang"
+                              form-name="'questions' + question.id"
+                              question="question"
+                              answer="question.answer">
+                    </q-mutliple-choice>
+
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-offset-2 col-xs-8 col-sm-offset-3 col-sm-6">
+            <div ng-if="!areAllQuestionsAnswered()">
+                <button class="btn btn-block btn-link" ng-click="gotoFirstUnansweredQuestion()" type="button" translate>
+                    <span translate>survey.questionnaire.goToFirstUnansweredQuestion</span>
+                </button>
+            </div>
+
+            <div class="btn-group btn-group-justified pagination">
+                <div class="btn-group">
+                    <button class="btn btn-default" ng-click="previousPage()" type="button" ng-disabled="vm.pagination.page === 1" translate>
+                        survey.questionnaire.previous
+                    </button>
+                </div>
+                <div class="btn-group">
+                    <button class="btn btn-default" ng-click="nextPage()" type="button" ng-disabled="vm.pagination.page === numberOfPages" translate>
+                        survey.questionnaire.next
+                    </button>
+                </div>
+                <div class="btn-group" >
+                    <button class="btn btn-default" ng-click="finish()" ng-disabled="disableValidation()" type="button">
+                        <strong class="text-success">
+                            <span translate>survey.questionnaire.finish</span>&nbsp;
+                            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                        </strong>
+                    </button>
+                </div>
+
+                <br>
+
+                <div style="text-align:center">
+                    <label><span translate>survey.questionnaire.page </span>{{vm.pagination.page}} / {{numberOfPages}}</label>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

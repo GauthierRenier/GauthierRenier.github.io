@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="quickscan" ng-controller="AppCtrl">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Quickscan</title>
+
+    <!-- Polyfills for older browsers -->
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- BOOTSTRAP -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- 3RD PARTY -->
+    <link rel="stylesheet" type="text/css" href="bower_components/angular-toastr/dist/angular-toastr.min.css" />
+
+    <!-- APPLICATION -->
+    <link href="css/quickscan.css" rel="stylesheet">
+</head>
+
+<body>
+
+<!--[if lt IE 10]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<header class="hidden" ng-if="isRunningOnLocalhost()">
+    <a href ng-click="gotoLogin()">login</a> | <a href ng-click="gotoLogout()">logout</a>
+</header>
+
+<div id="error-alerts" class="hidden" uib-collapse="!vm.error.show">
+    <div uib-alert class="alert alert-danger alert-dismissible" close="closeError()">
+        <span ng-if="vm.error.translatable" translate>{{vm.error.message}}</span>
+        <span ng-if="!vm.error.translatable" ng-bind-html="vm.error.message"></span>
+    </div>
+</div>
+
+<ng-view></ng-view>
+
+<!-- JQUERY -->
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+
+<!-- BOOTSTRAP -->
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- ANGULAR -->
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular-animate/angular-animate.min.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.min.js"></script>
+<script src="bower_components/angular-resource/angular-resource.min.js"></script>
+<script src="bower_components/angular-route/angular-route.min.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+<script src="bower_components/angular-toastr/dist/angular-toastr.tpls.min.js"></script>
+<script src="bower_components/angular-translate/angular-translate.min.js"></script>
+<script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
+<script src="bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.min.js"></script>
+<script src="bower_components/angular-translate-storage-local/angular-translate-storage-local.min.js"></script>
+<script src="bower_components/angular-ui-uploader/dist/uploader.min.js"></script>
+
+<!-- APPLICATION -->
+<script src="app/app.js"></script>
+<script src="app/app.controller.js"></script>
+
+<script src="app/sessions/me.resources.js"></script>
+<script src="app/sessions/sessions.service.js"></script>
+
+<script src="app/survey/answers.service.js"></script>
+<script src="app/survey/survey-done.controller.js"></script>
+<script src="app/survey/survey-evaluation.controller.js"></script>
+<script src="app/survey/survey-initialization.controller.js"></script>
+<script src="app/survey/survey-proceed.controller.js"></script>
+<script src="app/survey/survey-questionnaire.controller.js"></script>
+<script src="app/survey/survey-runs.resources.js"></script>
+<script src="app/survey/survey.service.js"></script>
+<script src="app/modals/confirmation.controller.js"></script>
+
+
+<script src="app/survey/management/stakeholders.resources.js"></script>
+<script src="app/survey/management/survey-management.controller.js"></script>
+
+<script src="app/env/env.constant.js"></script>
+<script src="app/env/env.service.js"></script>
+
+<script src="app/exceptions/exception-handler.service.js"></script>
+<script src="app/exceptions/exceptions.service.js"></script>
+
+<script src="app/questions/single-choice.component.js"></script>
+<script src="app/questions/multiple-choice.component.js"></script>
+<script src="app/questions/degree.component.js"></script>
+<script src="app/questions/proceed.component.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<div class="row">
+
+    <div class="col-xs-12 col-sm-offset-1 col-sm-10" ng-bind-html="$ctrl.question.text.translations[$ctrl.language]"></div>
+
+    <br/>
+
+    <div class="col-xs-12 col-sm-offset-1 col-sm-10">
+        <ng-form name="{{$ctrl.name}}" novalidate>
+
+            <br/>
+
+            <div ng-bind-html="$ctrl.questionEmployability.text.translations[$ctrl.language]"></div>
+
+            <div class="radio" ng-class="{'has-error': $ctrl.areEmployabilityOptionsInvalid()}">
+                <label>
+                    <input type="radio"
+                           name="employabilityOptions"
+                           ng-model="$ctrl.answerEmployability.value"
+                           ng-value="$ctrl.questionEmployability.candidateAnswers[1].id"
+                           required>
+                    <span ng-bind-html="$ctrl.questionEmployability.candidateAnswers[1].text.translations[$ctrl.language]"></span>
+                </label>
+            </div>
+
+            <div class="radio" ng-class="{'has-error': $ctrl.areEmployabilityOptionsInvalid()}">
+                <label>
+                    <input type="radio"
+                           name="employabilityOptions"
+                           ng-model="$ctrl.answerEmployability.value"
+                           ng-value="$ctrl.questionEmployability.candidateAnswers[0].id"
+                           required>
+                    <span ng-bind-html="$ctrl.questionEmployability.candidateAnswers[0].text.translations[$ctrl.language]"></span>
+                </label>
+            </div>
+
+            <br/>
+
+
+            <div class="radio" ng-class="{'has-error': $ctrl.areOptionsInvalid()}">
+                <label>
+                    <input type="radio"
+                           name="proceedOptions"
+                           ng-model="$ctrl.answer.value"
+                           ng-value="$ctrl.question.candidateAnswers[1].id"
+                           required>
+                    <span ng-bind-html="$ctrl.question.candidateAnswers[1].text.translations[$ctrl.language]"></span>
+                </label>
+            </div>
+
+            <div class="radio" ng-class="{'has-error': $ctrl.areOptionsInvalid()}">
+                <label>
+                    <input type="radio"
+                           name="proceedOptions"
+                           ng-model="$ctrl.answer.value"
+                           ng-value="$ctrl.question.candidateAnswers[0].id"
+                           required>
+                    <span ng-bind-html="$ctrl.question.candidateAnswers[0].text.translations[$ctrl.language]"></span>
+                </label>
+            </div>
+
+            <div class="form-group" ng-class="{'has-error': $ctrl.isReasonInvalid()}">
+                <input class="form-control"
+                       name="reason"
+                       ng-model="$ctrl.answer.text"
+                       ng-required="$ctrl.isReasonRequired()"
+                       type="text">
+            </div>
+        </ng-form>
+    </div>
+</div>

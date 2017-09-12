@@ -1,0 +1,42 @@
+
+/* GENERAL */
+
+.no-padding-left {
+    padding-left: 0;
+}
+
+/* FORMS */
+
+.form-actions {
+    margin-bottom: 16px;
+    margin-top: 16px;
+}
+
+/* CUSTOM PAGINATION */
+div.btn-group.pagination button {
+    background-color: white;
+    border-color: #ccc;
+    outline: none;
+}
+
+/* DEGREE COMPONENT */
+
+.degree {
+    font-size: 16px;
+    min-height: 28px;
+}
+.degree :focus {
+    outline: none;
+}
+button.degree-remove {
+    border: 0;
+    background-color: transparent;
+    margin-bottom: 1px;
+}
+button.degree-remove:active, button.degree-remove:focus, button.degree-remove:hover {
+    background-color: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    color: #a94442;
+    outline: none !important;
+}

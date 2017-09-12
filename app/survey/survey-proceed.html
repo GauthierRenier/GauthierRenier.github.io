@@ -1,0 +1,24 @@
+<br/>
+
+<div class="container-fluid" >
+    <div class="row">
+        <div class="col-xs-12 col-sm-offset-1 col-sm-10">
+            <form name="surveyProceedForm" ng-submit="proceed()" novalidate>
+                <q-proceed
+                        name="proceedForm"
+                        language="vm.language"
+                        question-employability="vm.questionEmployability"
+                        answer-employability="vm.answerEmployability"
+                        question="vm.question"
+                        answer="vm.answer"></q-proceed>
+
+                <div class="row">
+                    <div class="col-xs-offset-2 col-xs-8 col-sm-offset-3 col-sm-6 form-actions">
+                        <button class="btn btn-block btn-primary" ng-disabled="surveyProceedForm.$invalid"
+                                type="submit" translate>survey.initialization.proceed</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

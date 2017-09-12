@@ -1,0 +1,97 @@
+<br/>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 col-sm-offset-1 col-sm-10">
+            <div class="btn-group pull-right">
+                <label class="btn btn-default" ng-change="updateLanguage()" ng-model="vm.language" uib-btn-radio="'fr'">FR</label>
+                <label class="btn btn-default" ng-change="updateLanguage()" ng-model="vm.language" uib-btn-radio="'nl'">NL</label>
+            </div>
+        </div>
+    </div>
+
+    <br/>
+
+    <div class="clearfix row">
+        <div class="col-xs-12 col-sm-offset-1 col-sm-10">
+
+            <form name="manageForm" ng-submit="fetchStakeholder()" novalidate>
+                <div class="form-group" ng-class="{'has-error': !vm.stakeholder}">
+                    <label for="accessKey" translate>manage.accessKey</label>
+                    <input id="accessKey" autofocus class="form-control" name="accessKey" ng-blur="fetchStakeholder()"
+                           ng-model="vm.accessKey" placeholder="{{'manage.accessKey'|translate}}" type="text">
+                </div>
+            </form>
+
+            <uib-tabset active="vm.activeTab" ng-show="vm.stakeholder" type="tabs">
+
+                <uib-tab index="'identifiers'" ng-show="isPartnerInstitution()">
+                    <uib-tab-heading><span translate>manage.identifiers.tabName</span></uib-tab-heading>
+                    <br/>
+
+                    <div class="row">
+                        <div class="col-xs-9 form-group">
+                            <label class="control-label" for="uploadIdentifiersFile" translate>
+                                manage.identifiers.file
+                            </label>
+                            <input id="uploadIdentifiersFile" class="form-control" type="file"/>
+                        </div>
+                        <div class="col-xs-3 form-group no-padding-left">
+                            <label class="control-label">&nbsp;</label>
+                            <button class="btn btn-primary form-control" ng-click="uploadIdentifiers()"
+                                    type="button" translate>manage.identifiers.upload</button>
+                        </div>
+                    </div>
+
+                    <a ng-href="{{vm.mailto}}" translate>manage.identifiers.sendEmailToServiceDesk</a>
+                </uib-tab>
+
+                <uib-tab index="'invitation-codes'" ng-show="isPartnerInstitution()">
+                    <uib-tab-heading><span translate>manage.invitationCodes.tabName</span></uib-tab-heading>
+                    <br/>
+
+                    <div class="row">
+                        <div class="col-xs-12 form-group">
+                            <label class="control-label" translate>manage.invitationCodes.download</label>
+
+                            <div class="list-group" ng-if="hasInvitations()">
+                                <a ng-href="{{linkToInvitationFile(file)}}"
+                                   class="list-group-item"
+                                   ng-repeat="file in vm.files.invitations">
+                                    <i class="glyphicon glyphicon-download-alt"></i>&nbsp;{{file.name}}</a>
+                            </div>
+
+                            <div class="alert alert-warning text-center" ng-if="!hasInvitations()" role="alert">
+                                <span translate>manage.invitationCodes.noResults</span>
+                            </div>
+                        </div>
+                    </div>
+                </uib-tab>
+
+                <uib-tab index="'survey-results'">
+                    <uib-tab-heading><span translate>manage.surveyResults.tabName</span></uib-tab-heading>
+                    <br/>
+
+                    <div class="row">
+                        <div class="col-xs-12 form-group">
+                            <label class="control-label" translate>manage.surveyResults.download</label>
+
+                            <div class="list-group" ng-if="hasResults()">
+                                <a ng-href="{{linkToPartnerInstitutionResultFile(file)}}"
+                                   class="list-group-item"
+                                   ng-repeat="file in vm.files.results">
+                                    <i class="glyphicon glyphicon-download-alt"></i>&nbsp;{{file.name}}</a>
+                            </div>
+
+                            <div class="alert alert-warning text-center" ng-if="!hasResults()" role="alert">
+                                <span translate>manage.surveyResults.noResults</span>
+                            </div>
+                        </div>
+                    </div>
+                </uib-tab>
+
+            </uib-tabset>
+
+        </div>
+    </div>
+</div>
